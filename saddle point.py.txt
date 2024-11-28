@@ -1,0 +1,45 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+print("Hello world")
+print("Hello, World!")
+#practical 2
+m=int(input("Enter the no. of rows: "))
+n=int(input("Enter no. of columns: "))
+matrix=[]
+for i in range(m):
+  row=[]
+  for j in range(n):
+    row.append(int(input()))
+  matrix.append(row)
+    
+for i  in range(m):
+  for j in range(n):
+    print(matrix[i][j],end=" ")
+  print()
+    
+#SADDLE POINT PROGRAM
+min=0
+max=0
+col=0
+row=0
+for i in range(m):
+  min=matrix[i][0]
+  for j  in range(n):
+    if(min>matrix[i][j]):
+      min=matrix[i][j]
+      col=j
+      
+  max=min
+  for k in range(m):
+        if(min<matrix[k][col]):
+          max=matrix[k][col]
+          
+  row=i
+  if(min==max):
+            print("Saddle point of matrix is",min)
+            print("The index of saddle point is[",row,",",col,"]")
+            break
+if(min!=max):
+    print("There is no saddle point in the matrix")
+            
+

@@ -1,0 +1,81 @@
+def bubble(lst):
+        
+      n=len(lst)
+      for k in range (n-1):
+        j=0
+        while (j<n-k-1):
+            if lst[j]>lst[j+1]:
+                lst[j],lst[j+1]=lst[j+1],lst[j]
+            j+=1
+      return lst
+def selection(lst):
+        n=len(lst)
+        for i in range(n-2):
+            pos=i
+            for j in range(i+1,n-1):
+                if lst[j]<lst[pos]:
+                    pos=j
+            lst[i],lst[pos]=lst[pos],lst[i]
+        return lst
+        
+def accept():
+        print("enter no")
+        nn=int(input())
+        print("enter marks")
+        lst=[]
+        for i in range(nn):
+            temp=float(input())
+            lst.append(temp)
+        return lst
+def t5():
+        print("display top 5 marks")
+        temp=input()
+        if temp=='y':
+            print("top 5 studs marks- ")
+            for i in range(5,0,-1):
+                print(lst[i])
+        return
+lst=[]
+while True:
+        
+            print("--------MENU----------")
+            print("1. enter studs marks")
+            print("2. bubble sort")
+            print("3.selection sort")
+            
+            print("4. exit--------")
+            ch=int(input("Enter your choice: "))
+            if ch==4:
+                print("end of prog")
+                exit(0)
+            
+            elif(ch==1):
+                lst=accept()
+                
+            elif(ch==2):
+              bubble(lst)
+              print(lst)
+              t5()
+            elif ch==3:
+                selection(lst)
+                print(lst)
+                t5()
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            

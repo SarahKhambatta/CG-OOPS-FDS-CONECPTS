@@ -1,0 +1,69 @@
+def pali():
+    str=input("Enter string to check palindrome or not: ")
+    m=str[::-1]
+    print(m)
+    if(m==str):
+        print("String is palindrome.")
+    else:
+        print("string is not palindrome")
+def longlen():
+    str=input("Enter the string ")
+    s=str.split( )
+    max=0
+    for ele in s:
+        if(max<len(ele)):
+            max=len(ele)
+            word=ele
+    print("longest word is ",word)
+    print("length of word is ",len(word))
+def freq():
+    str=input("enter a string ")
+    c=input("enter a char ")
+    count=0
+    for i in range (len(str)):
+        if(str[i]==c):
+            count=count+1
+    print("freq of char is " ,count)
+def occ():
+    input_string=input("enter string ")
+    words = input_string.split()
+    word_occurrences = {}
+    for word in words:
+        word_occurrences[word] = word_occurrences.get(word, 0)+1
+    for word, count in word_occurrences.items():
+        print(f'{word}: {count}')
+
+    
+def findsubstr(string,word):
+    string=input("enter a string ")
+    word=input("Enter a substring ")
+    i=0
+    for i in range(len(string)-len(word)+1):
+        if string[i:i+len(word)]==word:
+            return i
+    return "not found"
+    print(len(word))
+    print(findsubstr(string,word))
+
+        
+def main():
+    while(True):
+        print("\n1.palindrome\n2.freq of char\n3.longest len\n4.1st index of substr\n5.occ of words\n6. exit")
+        ch=int(input("enter the choice "))
+        if(ch==6):
+            print("End of program")
+            quit()
+        elif(ch==1):
+            pali()
+        elif(ch==2):
+            longlen()
+        elif(ch==3):
+            freq()
+        elif(ch==4):
+            findsubstr(string,word)
+        elif(ch==5):
+            occ()
+        
+        else:
+            print("try again")
+main()    
